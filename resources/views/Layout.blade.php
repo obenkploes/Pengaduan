@@ -43,9 +43,12 @@
         <div id="center">
             <nav class="navbar navbar-dark bg-primary bg-gradient shadow-sm">
                 <div class="container-fluid">
-                    <span class="navbar-brand">Dashboard</span>
+                    <span class="navbar-brand">@yield('title')</span>
                 </div>
             </nav>
+            <div class="container-fluid mt-4">
+                @yield('content')
+            </div>
         </div>
     </div>
 
