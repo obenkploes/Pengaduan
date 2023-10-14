@@ -13,11 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Administrator.index');
+
+
+Route::prefix('admin')->group(function(){
+    Route::get('/',function(){
+        return view('Administrator.index');
+    });
+    Route::get('login',function(){
+        return view('Administrator.Login');
+    });
 });
 
-
-Route::get('/login',function(){
-    return view('Administrator.Login');
+// Route masyarakat
+Route::get('/', function () {
+    return view('Masyarakat.Index');
 });
