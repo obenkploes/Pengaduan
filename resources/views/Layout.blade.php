@@ -29,13 +29,22 @@
                         </a>
                     </li>
                     <li class="nav-item mb-1">
-                        <a href="#" class="nav-link ">Dashboard</a>
+                        <a href="#" class="nav-link ">
+                            <i class="bi bi-person-bounding-box"></i>
+                            Pengguna
+                        </a>
                     </li>
                     <li class="nav-item mb-1">
-                        <a href="#" class="nav-link ">Dashboard</a>
+                        <a href="#" class="nav-link ">
+                            <i class="bi bi-file-earmark-text-fill"></i>
+                            Aduan Masuk
+                        </a>
                     </li>
                     <li class="nav-item mb-1">
-                        <a href="#" class="nav-link ">Dashboard</a>
+                        <a href="#" class="nav-link ">
+                            <i class="bi bi-people-fill"></i>
+                            Data anggota
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -44,6 +53,14 @@
             <nav class="navbar navbar-dark bg-primary bg-gradient shadow-sm">
                 <div class="container-fluid">
                     <span class="navbar-brand">@yield('title')</span>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="#" class="btn btn-danger">
+                                Sign Out
+                                <i class="bi bi-box-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
             <div class="container-fluid mt-4">
