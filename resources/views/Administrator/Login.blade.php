@@ -22,11 +22,12 @@
                     <h1 class="h1">Laporkan !!</h1>
                     <h3 class="h4 mb-4 ">Selamat datang kembali</h3>
                     <form action="" method="post" class="mt-5">
+                        @csrf
                         <div class="mb-3">
                             <input type="text" id="username" name="username" class="form-control py-2" placeholder="Username">
                         </div>
                         <div class="mb-3">
-                            <input type="text" id="password" name="password" class="form-control py-2" placeholder="Password">
+                            <input type="password" id="password" name="password" class="form-control py-2" placeholder="Password">
                         </div>
                         <div class="mb-3">
                             <button class="btn btn-outline-light form-control">Sign in</button>

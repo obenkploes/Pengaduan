@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PetugasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('admin')->group(function(){
-    Route::get('/',function(){
-        return view('Administrator.index');
+    Route::middleware('auth:petugas')->group(function(){
+        Route::get('/',[PetugasController::class,'index']);
     });
-    Route::get('login',function(){
-        return view('Administrator.Login');
-    });
+    
+    Route::get('login',[PetugasController::class,'login'])->name('login');
+    Route::post('login',[PetugasController::class,'postlogin']);
 });
 
 // Route masyarakat
