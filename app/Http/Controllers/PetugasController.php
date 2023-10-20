@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengaduan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PetugasController extends Controller
 {
     public function index(){
-        return view('Administrator.index');
+        $aduan = new Pengaduan();
+        $data = [
+            "jumlah_masuk"=> $aduan->all()->count(),
+            "jumlah_proses"=> $aduan->where('status','proses')->count(),
+            "jumlah_selesai"=>$aduan->where('status','selesai')->count(),
+        ];
+        return view('Administrator.index',$data);
     }
 
     public function login(Request $request){
@@ -25,9 +32,14 @@ class PetugasController extends Controller
 
         if($cek){
             $request->session()->regenerate();
-            return response()->json($request->session()->all());
+            return redirect('/admin');
         }
-        return response()->json($request->all());
+        return back();
+    }
+
+    public function logout(Request $request){
+        Auth::guard('petugas')->logout();
+        return redirect('admin/login');
     }
 
 }

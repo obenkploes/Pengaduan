@@ -23,6 +23,7 @@ Route::prefix('admin')->group(function(){
     
     Route::get('login',[PetugasController::class,'login'])->name('adminlogin');
     Route::post('login',[PetugasController::class,'postlogin']);
+    Route::get('logout',[PetugasController::class,'logout']);
 });
 
 // Route masyarakat

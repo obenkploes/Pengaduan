@@ -23,7 +23,7 @@
             <div id="menu" class="mt-4 ">
                 <ul class="nav flex-column ">
                     <li class="nav-item mb-1">
-                        <a href="#" class="nav-link active">
+                        <a href="#" class="nav-link {{Request::is('admin')?'active':''}}">
                             <i class="bi bi-house-fill"></i>
                             Dashboard
                         </a>
@@ -55,7 +55,7 @@
                     <span class="navbar-brand">@yield('title')</span>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="#" class="btn btn-danger">
+                            <a href="/admin/logout" class="btn btn-danger">
                                 Sign Out
                                 <i class="bi bi-box-arrow-right"></i>
                             </a>

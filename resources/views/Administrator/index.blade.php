@@ -12,7 +12,7 @@
                             <i class="bi bi-chat-square-text" @style(['font-size:72px'])></i>
                         </div>
                         <div class="col-auto justify-content-center align-content-center flex-column d-flex">
-                            <h4 class="h1">100</h4>
+                            <h4 class="h1">{{$jumlah_masuk}}</h4>
                             <h5 class="h5 text-white">Aduan Masuk</h5>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                             <i class="bi bi-person-lines-fill" @style(['font-size:72px'])></i>
                         </div>
                         <div class="col-auto justify-content-center align-content-center flex-column d-flex">
-                            <h4 class="h1">100</h4>
+                            <h4 class="h1">{{$jumlah_proses}}</h4>
                             <h5 class="h5 ">Status Proses</h5>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                             <i class="bi bi-check-square-fill" @style(['font-size:72px'])></i>
                         </div>
                         <div class="col-auto justify-content-center align-content-center flex-column d-flex">
-                            <h4 class="h1">100</h4>
+                            <h4 class="h1">{{$jumlah_selesai}}</h4>
                             <h5 class="h5 text-white">Status Selesai</h5>
                         </div>
                     </div>
