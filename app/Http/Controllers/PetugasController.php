@@ -11,7 +11,8 @@ class PetugasController extends Controller
         return view('Administrator.index');
     }
 
-    public function login(){
+    public function login(Request $request){
+        // return response()->json($request->is('admin/*'));
         return view('Administrator.Login');
     }
     public function postLogin(Request $request){

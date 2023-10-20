@@ -21,7 +21,7 @@ Route::prefix('admin')->group(function(){
         Route::get('/',[PetugasController::class,'index']);
     });
     
-    Route::get('login',[PetugasController::class,'login'])->name('login');
+    Route::get('login',[PetugasController::class,'login'])->name('adminlogin');
     Route::post('login',[PetugasController::class,'postlogin']);
 });
 

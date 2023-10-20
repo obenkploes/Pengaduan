@@ -41,6 +41,7 @@ return [
             'provider' => 'masyarakat',
         ],
         'petugas'=>[
+            'redirectTo'=> 'adminlogin',
             'driver'=> 'session',
             'provider'=> 'petugas',
         ]
