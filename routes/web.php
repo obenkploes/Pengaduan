@@ -17,13 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('admin')->group(function(){
-    Route::get('login', [PetugasController::class,'login']);
-    Route::post('login', [PetugasController::class,'postlogin']);
-    Route::get('logout', [PetugasController::class,'logout']);
-    
-    Route::middleware(ValidasiPetugas::class)->group(function(){
-        Route::get('/', [PetugasController::class,'index']);
+Route::prefix('admin')->group(function () {
+    Route::get('login', [PetugasController::class, 'login']);
+    Route::post('login', [PetugasController::class, 'postlogin']);
+    Route::get('logout', [PetugasController::class, 'logout']);
+
+    Route::middleware(ValidasiPetugas::class)->group(function () {
+        Route::get('/', [PetugasController::class, 'index']);
+        // Route petugas
+        Route::prefix('petugas')->group(function () {
+            Route::get('', [PetugasController::class, 'list']);
+            Route::get('tambah', [PetugasController::class, 'add']);
+            Route::post('tambah', [PetugasController::class, 'create']);
+            Route::get('edit/{id}', [PetugasController::class,'show']);
+            Route::post('edit/{id}', [PetugasController::class,'update']);
+        });
     });
 });
 

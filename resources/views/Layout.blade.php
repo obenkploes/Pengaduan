@@ -23,27 +23,27 @@
             <div id="menu" class="mt-4 ">
                 <ul class="nav flex-column ">
                     <li class="nav-item mb-1">
-                        <a href="#" class="nav-link {{Request::is('admin')?'active':''}}">
+                        <a href="/admin" class="nav-link {{Request::is('admin')?'active':''}}">
                             <i class="bi bi-house-fill"></i>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item mb-1">
-                        <a href="#" class="nav-link ">
+                        <a href="/admin/petugas" class="nav-link {{Request::is('admin/petugas')||Request::is('admin/petugas/*')?'active':''}}"">
                             <i class="bi bi-person-bounding-box"></i>
-                            Pengguna
+                            Petugas
                         </a>
                     </li>
                     <li class="nav-item mb-1">
-                        <a href="#" class="nav-link ">
+                        <a href="/admin/aduan" class="nav-link {{Request::is('admin/aduan')||Request::is('admin/aduan/*')?'active':''}}"">
                             <i class="bi bi-file-earmark-text-fill"></i>
                             Aduan Masuk
                         </a>
                     </li>
                     <li class="nav-item mb-1">
-                        <a href="#" class="nav-link ">
+                        <a href="/admin/masyarakat" class="nav-link {{Request::is('admin/masyarakat')||Request::is('admin/masyarakat/*')?'active':''}}"">
                             <i class="bi bi-people-fill"></i>
-                            Data anggota
+                            Data masyarakat
                         </a>
                     </li>
                 </ul>
