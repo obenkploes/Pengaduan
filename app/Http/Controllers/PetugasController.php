@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengaduan;
+use App\Models\Petugas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,19 +28,25 @@ class PetugasController extends Controller
             'username'=>'required',
             'password'=> 'required'
         ]);
-
-        $cek = Auth::guard('petugas')->attempt(['username'=>$request->input('username'),'password'=>$request->input('password')]);
-
-        if($cek){
-            $request->session()->regenerate();
-            return redirect('/admin');
+        $p = new Petugas();
+        $p= $p->where('username',$request->username)->where('password',$request->password);
+        if($p->exists()){
+            $p = $p->first();
+            session([
+                'id'=>$p->id,
+                'username'=>$p->username,
+                'password'=>$p->password,
+                'level'=>$p->level
+            ]);
+            return redirect('admin');
         }
+       
         return back();
     }
 
     public function logout(Request $request){
-        Auth::guard('petugas')->logout();
-        return redirect('admin/login');
+        session()->flush();
+        return redirect('admin');
     }
 
 }

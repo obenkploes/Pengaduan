@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PetugasController;
+use App\Http\Middleware\ValidasiPetugas;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('admin')->group(function(){
-    Route::middleware('auth:petugas')->group(function(){
-        Route::get('/',[PetugasController::class,'index']);
-    });
+    Route::get('login', [PetugasController::class,'login']);
+    Route::post('login', [PetugasController::class,'postlogin']);
+    Route::get('logout', [PetugasController::class,'logout']);
     
-    Route::get('login',[PetugasController::class,'login'])->name('adminlogin');
-    Route::post('login',[PetugasController::class,'postlogin']);
-    Route::get('logout',[PetugasController::class,'logout']);
+    Route::middleware(ValidasiPetugas::class)->group(function(){
+        Route::get('/', [PetugasController::class,'index']);
+    });
 });
 
 // Route masyarakat
