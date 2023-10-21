@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Middleware\ValidasiPetugas;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,13 @@ Route::prefix('admin')->group(function () {
             Route::post('tambah', [PetugasController::class, 'create']);
             Route::get('edit/{id}', [PetugasController::class,'show']);
             Route::post('edit/{id}', [PetugasController::class,'update']);
+            Route::get('hapus/{id}', [PetugasController::class,'delete']);
+            Route::get('hapus/confirm/{id}', [PetugasController::class,'destroy']);
+        });
+
+        // Route aduan
+        Route::prefix('aduan')->group(function () {
+            Route::get('',[PengaduanController::class,'index']);
         });
     });
 });
