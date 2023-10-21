@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Middleware\ValidasiPetugas;
@@ -44,6 +45,7 @@ Route::prefix('admin')->group(function () {
 });
 
 // Route masyarakat
-Route::get('/', function () {
-    return view('Masyarakat.Index');
-});
+Route::get('/', [MasyarakatController::class,'index']);
+Route::get('laporkan', [MasyarakatController::class,'laporkan']);
+
+// Route::get('laporkan', [PetugasController::class,
