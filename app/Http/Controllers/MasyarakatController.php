@@ -16,7 +16,17 @@ class MasyarakatController extends Controller
         ];
         return view('Masyarakat.Index',$data);
     }
-    public function laporkan(){
-        return view('Masyarakat.laporkan');
+    public function laporkan(Request $request){
+        // siapkan variable untuk menampung file
+        $foto = $request->file('foto');
+        
+        // tentukan path file akan disimpan
+        $folder = 'upload_data';
+
+        // pindahkan file ke target folder
+        $foto->move($folder, $foto->getClientOriginalName());
+        return "sukses bro";
     }
+
+    
 }

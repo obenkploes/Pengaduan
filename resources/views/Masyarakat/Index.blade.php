@@ -76,7 +76,8 @@
             <div class="card border-0">
                 <div class="card-body">
                     <h1 class="h2 text-black-50 text-center mb-4">Kirim aduan anda</h1>
-                    <form action="laporkan" method="post">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="mb-3">
                             <label for="isi_laporan" class="form-label">Isi Aduan</label>
                             <textarea name="isi_laporan" id="isi_laporan" class="form-control" rows="5"></textarea>
@@ -86,7 +87,7 @@
                             <input type="file" name="foto" id="foto" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <button class="btn form-control btn-primary" {{ session('username') ? '' : 'disabled' }}>Kirim
+                            <button class="btn form-control btn-primary" {{ session('username') ? '' : '' }}>Kirim
                                 aduan</button>
                             @if (!session('username'))
                                 <span class="form-text">Anda belum login , klik <a href="login">masuk</a> untuk mulai

@@ -46,6 +46,6 @@ Route::prefix('admin')->group(function () {
 
 // Route masyarakat
 Route::get('/', [MasyarakatController::class,'index']);
-Route::get('laporkan', [MasyarakatController::class,'laporkan']);
+Route::post('/', [MasyarakatController::class,'laporkan']);
 
 // Route::get('laporkan', [PetugasController::class,
