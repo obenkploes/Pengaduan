@@ -27,6 +27,4 @@ class MasyarakatController extends Controller
         $foto->move($folder, $foto->getClientOriginalName());
         return "sukses bro";
     }
-
-    
 }
